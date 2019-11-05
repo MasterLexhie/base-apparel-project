@@ -5,6 +5,7 @@ $primarySoftRed: hsl(0, 93%, 68%);
 $neutralDarkGrayish: hsl(0, 6%, 24%);
 $borderGrey: hsla(0, 6%, 24%, 0.380392);
 $boxShadow: #f29f9fb0;
+$font: 'Josefin Sans', sans-serif;
 $firstGradients: Linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
 $secondGradients: Linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
 
@@ -12,10 +13,11 @@ $secondGradients: Linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
 ::placeholder {
   color: $primaryDesaturatedRed;
   font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
 }
 body {
   background: $firstGradients;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: $font;
   font-size: 16px;
 }
   main {
@@ -32,9 +34,6 @@ body {
         width: 100%;
         object-fit:contain;
       }
-      // .mobile-image {
-      //   display: block;
-      // }
       .desktop-image {
         display: none;
       }
@@ -67,15 +66,16 @@ body {
         display: flex;
         padding: 0em 0em 0em 1em;
         border-radius: 50px;
-        border: 0.5px solid $borderGrey;
+        border: 0.6px solid $borderGrey;
         input {
           width: 100%;
-          height: 13px;
-          margin: 0.3em 0em;
+          // margin: 0.3em 0em;
           border: none;
-          padding: 1.2em 0;
+          font-size: 1em;
+          background: transparent;
           border-radius: 50px;
           color: $primaryDesaturatedRed;
+          font-family: $font;
           &:focus,
           &:active,
           &:visited {
