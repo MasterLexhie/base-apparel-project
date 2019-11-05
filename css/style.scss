@@ -1,0 +1,163 @@
+//BASE VARIABLES
+
+$primaryDesaturatedRed: hsl(0, 36%, 70%);
+$primarySoftRed: hsl(0, 93%, 68%);
+$neutralDarkGrayish: hsl(0, 6%, 24%);
+$borderGrey: hsla(0, 6%, 24%, 0.380392);
+$boxShadow: #f29f9fb0;
+$firstGradients: Linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+$secondGradients: Linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+
+//MAIN STYLES
+::placeholder {
+  color: $primaryDesaturatedRed;
+  font-family: 'Josefin Sans', sans-serif;
+}
+body {
+  background: $firstGradients;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16px;
+}
+  main {
+    display: grid;
+    header {
+      padding: 1.5em 2em;
+      img {
+        object-fit: contain;
+        width: 30%;
+      }
+    }
+    .hero-image {
+      img {
+        width: 100%;
+        object-fit:contain;
+      }
+      // .mobile-image {
+      //   display: block;
+      // }
+      .desktop-image {
+        display: none;
+      }
+    }
+
+    .hero-content {
+      text-align: center;
+        &-text {
+          color: $primaryDesaturatedRed;
+      }
+      .font-light{
+        font-weight: 300;
+      }
+      h1 {
+        color: $neutralDarkGrayish;
+      }
+      &-title {
+        font-size: 3em;
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        padding: 2em 1em 1em 1em;
+      }
+      p {
+        font-size: 0.9em;
+        padding: 0em 2em;
+        line-height: 1.4;
+      }
+      .input-box {
+        margin: 2em 2em 1em 2em;
+        display: flex;
+        padding: 0em 0em 0em 1em;
+        border-radius: 50px;
+        border: 0.5px solid $borderGrey;
+        input {
+          width: 100%;
+          height: 13px;
+          margin: 0.3em 0em;
+          border: none;
+          padding: 1.2em 0;
+          border-radius: 50px;
+          color: $primaryDesaturatedRed;
+          &:focus,
+          &:active,
+          &:visited {
+            outline: none
+          }
+        }
+        .error-icon {
+          position: relative;
+          right: 11px;
+          width: 34px;
+          height: max-content;
+          margin: auto 0;
+        }
+        button {
+          border: none;
+          border-radius: 50px;
+          padding: .8em 2.2em;
+          background-image: $secondGradients;
+          cursor: pointer;
+          box-shadow: 0px 4px 9px 0px $boxShadow;
+          &:hover {
+            transform: scale(1.1);
+            transition: transform ease-in .7s;
+          }
+
+          img {
+            object-fit: contain;
+            width: 13px
+          }
+        }
+      }
+    }
+    .error-msg {
+      margin-bottom: 6em;
+      color: $primarySoftRed;
+    }
+  }
+  @media (min-width: 1440px) {
+    body {
+      background: $firstGradients;
+    }
+    main {
+      grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+
+      .mobile-image {
+        display: none;
+      }
+
+      .desktop-image {
+        display: block !important;
+      }
+
+      .hero-image {
+        grid-row: 1/3;
+        grid-column: 2/3;
+      }
+
+      header {
+        padding: 6em 10em 1.5em 10em;
+
+        img {
+          width: unset;
+        }
+      }
+      .hero-content {
+        text-align: unset;
+        &-title {
+          font-size: 4rem;
+          letter-spacing: 10px;
+          padding: 1em 2.5em 1em 2.5em;
+        }
+        p {
+          font-size: unset;
+          padding: 0em 10em;
+        }
+        .input-box {
+          margin: 2em 10em 1em 10em;
+        }
+        .error-msg {
+          padding: 0em 11em;
+        }
+      }
+    }
+
+  }

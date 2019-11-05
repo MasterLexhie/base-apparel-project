@@ -2,25 +2,33 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="scss/style.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600&display=swap" rel="stylesheet">
     <title>Sample 1</title>
   </head>
   <body>
-
     <main>
-      <div class="header">
-        <h1>Header</h1>
-      </div>
+      <header>
+        <img src="images/logo.svg" alt="logo">
+      </header>
       <div class="hero-image">
-        <img src="images/hero-mobile.jpg" alt="hero-image-mobile">
+        <img src="images/hero-mobile.jpg" alt="hero-image-mobile" class="mobile-image">
+        <img src="images/hero-desktop.jpg" alt="hero-image-desktop" class="desktop-image">
       </div>
       <div class="hero-content">
-        <h1 class="hero-content-title">We're coming soon</h1>
-        <p class="hero-content-text"></p>
+        <h1 class="hero-content-title">
+          <span class="hero-content-text font-light">We're</span> coming soon
+        </h1>
+        <p class="hero-content-text">Hello fellow shopper, We're currently building our new fashion store, Add your email below to stay up-to-date with announcements and our launch deals</p>
         <div class="input-box">
-          <input type="text" name="" value="">
-          <button type="button" name="button">></button>
+          <input type="text" id="input" placeholder="Email Address">
+          <img src="images/icon-error.svg" alt="icon error" class="error-icon">
+          <button type="button" name="button">
+            <img src="images/icon-arrow.svg" alt="icon-arrow">
+          </button>
         </div>
+        <p class="error-msg">Please provide a valid email</p>
       </div>
     </main>
   </body>
