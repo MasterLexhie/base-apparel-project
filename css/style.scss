@@ -2,12 +2,18 @@
 
 $primaryDesaturatedRed: hsl(0, 36%, 70%);
 $primarySoftRed: hsl(0, 93%, 68%);
+$secondarySoftGreen: hsl(121, 72%, 56%);
 $neutralDarkGrayish: hsl(0, 6%, 24%);
 $borderGrey: hsla(0, 6%, 24%, 0.380392);
 $boxShadow: #f29f9fb0;
 $font: 'Josefin Sans', sans-serif;
 $firstGradients: Linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
 $secondGradients: Linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+
+//GENERAL STYLES
+.flex {
+  display: flex;
+}
 
 //MAIN STYLES
 ::placeholder {
@@ -16,12 +22,16 @@ $secondGradients: Linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
   font-weight: 400;
 }
 body {
-  background: $firstGradients;
   font-family: $font;
   font-size: 16px;
 }
   main {
     display: grid;
+    background: $firstGradients;
+    background-size: cover;
+    max-width: 1440px;
+    margin: 0 auto;
+
     header {
       padding: 1.5em 2em;
       img {
@@ -33,9 +43,6 @@ body {
       img {
         width: 100%;
         object-fit:contain;
-      }
-      .desktop-image {
-        display: none;
       }
     }
 
@@ -64,13 +71,12 @@ body {
       .input-box {
         margin: 2em 2em 1em 2em;
         display: flex;
-        padding: 0em 0em 0em 1em;
         border-radius: 50px;
         border: 0.6px solid $borderGrey;
         input {
           width: 100%;
-          // margin: 0.3em 0em;
           border: none;
+          padding-left: 1em;
           font-size: 1em;
           background: transparent;
           border-radius: 50px;
@@ -88,15 +94,19 @@ body {
           width: 34px;
           height: max-content;
           margin: auto 0;
+          display: none;
         }
         button {
           border: none;
+          outline: none;
           border-radius: 50px;
           padding: .8em 2.2em;
           background-image: $secondGradients;
           cursor: pointer;
           box-shadow: 0px 4px 9px 0px $boxShadow;
-          &:hover {
+          &:hover,
+          &:active,
+          &:focus {
             transform: scale(1.1);
             transition: transform ease-in .7s;
           }
@@ -107,26 +117,21 @@ body {
           }
         }
       }
+      .msg {
+        &-status {
+          margin-top: .6em;
+        }
+      }
     }
-    .error-msg {
-      margin-bottom: 6em;
-      color: $primarySoftRed;
-    }
+
+
   }
-  @media (min-width: 1440px) {
+  @media (min-width: 1200px) {
     body {
       background: $firstGradients;
     }
     main {
       grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
-
-      .mobile-image {
-        display: none;
-      }
-
-      .desktop-image {
-        display: block !important;
-      }
 
       .hero-image {
         grid-row: 1/3;
@@ -152,10 +157,10 @@ body {
           padding: 0em 10em;
         }
         .input-box {
-          margin: 2em 10em 1em 10em;
+          margin: 2em 10em 0em 10em;
         }
-        .error-msg {
-          padding: 0em 11em;
+        .msg-status {
+          padding: 0em 11em 0em 11em;
         }
       }
     }
