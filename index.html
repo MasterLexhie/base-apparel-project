@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.min.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600&display=swap" rel="stylesheet">
     <title>Base Apparel</title>
   </head>
@@ -13,23 +14,28 @@
         <img src="images/logo.svg" alt="logo">
       </header>
       <div class="hero-image">
-        <img src="images/hero-mobile.jpg" alt="hero-image-mobile" class="mobile-image">
-        <img src="images/hero-desktop.jpg" alt="hero-image-desktop" class="desktop-image">
+        <picture>
+         <source type="image/jpg" media="(min-width: 1200px)" srcset="images/hero-desktop.jpg" />
+         <img src="images/hero-mobile.jpg" alt="hero-image-mobile">
+        </picture>
       </div>
       <div class="hero-content">
         <h1 class="hero-content-title">
           <span class="hero-content-text font-light">We're</span> coming soon
         </h1>
         <p class="hero-content-text">Hello fellow shopper, We're currently building our new fashion store, Add your email below to stay up-to-date with announcements and our launch deals</p>
-        <div class="input-box">
-          <input type="text" id="input" placeholder="Email Address">
+        <form id="form" class="input-box">
+          <input type="text" id="email" placeholder="Email Address">
           <img src="images/icon-error.svg" alt="icon error" class="error-icon">
-          <button type="button" name="button">
+          <button id="btn" name="button" type="submit">
             <img src="images/icon-arrow.svg" alt="icon-arrow">
           </button>
+        </form>
+        <div class="msg">
+          <p class="msg-status"></p>
         </div>
-        <p class="error-msg">Please provide a valid email</p>
       </div>
     </main>
+    <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>
